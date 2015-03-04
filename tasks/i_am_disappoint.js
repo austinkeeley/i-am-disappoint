@@ -50,9 +50,11 @@ module.exports = function(grunt) {
         // Read and return the file's source.
         return grunt.file.read(filepath);
       }).join('\n');
-      console.log(contents);
-      var regex = /<!-- i-am-disappoint -->/;
-      contents = contents.replace(regex, shame);
+      
+      if (!everythingOkay) {
+        var regex = /<!-- i-am-disappoint -->/;
+        contents = contents.replace(regex, shame);
+      }
     
       // Write joined contents to destination filepath.
       grunt.file.write(file.dest, contents);

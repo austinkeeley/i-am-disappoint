@@ -90,6 +90,9 @@ grunt.initConfig({
   },
 });
 ```
+## Credits
+The ribbon style comes from  [Miro Karilahti](http://codepen.io/miroot)'s Pen [Corner Ribbons](http://codepen.io/miroot/pen/wiKAp/).
+
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).

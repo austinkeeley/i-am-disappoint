@@ -1,12 +1,43 @@
-<style>
 @import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700');
-
 
 *{
   margin: 0;
   padding: 0;
 }
 
+body{
+  background: #f0f0f0;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+h1{
+  width: 500px;
+  height: 100px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -275px;
+  font-size: 3.2em;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 100px;
+  color: #aaa;
+}
+
+h2{
+  width: 500px;
+  height: 100px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: 0 0 0 -225px;
+  font-size: 1.6em;
+  font-weight: 400;
+  text-align: center;
+  line-height: 100%;
+  color: #bbb;
+}
 
 /* The ribbons */
 
@@ -22,9 +53,6 @@
   color: #f0f0f0;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
-  font-family: 'Noto Sans', sans-serif;
-  color: white;
-  
 }
 
 /* Custom styles */
@@ -83,8 +111,3 @@
 .corner-ribbon.red{background: #e43;}
 .corner-ribbon.orange{background: #e82;}
 .corner-ribbon.yellow{background: #ec0;}
-</style>
-
-<div class="corner-ribbon top-right sticky red shadow">
-    I am terrible.
-</div>
