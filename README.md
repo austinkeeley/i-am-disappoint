@@ -2,6 +2,15 @@
 
 > Shames your terrible builds.
 
+## One day at work...
+
+    Boss: Our build is broken but we want to promote it to staging.
+    Me:   Well, we should probably fix the build.
+    Boss: Yeah, but it would be nice if we could promote the build but tell people
+          it's broken and not to use it.
+    Me:   What.
+
+
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
 

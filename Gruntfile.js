@@ -30,27 +30,12 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     i_am_disappoint: {
-      default_options: {
+      example: {
         options: {
+            testResults: 'test/fixtures/test_results.xml',
         },
-        files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
-      },
-      custom_options: {
-        options: {
-          separator: ': ',
-          punctuation: ' !!!'
-        },
-        files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
+        files: { 'tmp/index.html': ['test/fixtures/index.html'] }
       }
-    },
-
-    // Unit tests.
-    nodeunit: {
-      tests: ['test/*_test.js']
     }
 
   });
@@ -69,5 +54,7 @@ module.exports = function(grunt) {
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test']);
+
+
 
 };
