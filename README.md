@@ -4,17 +4,14 @@
 
 ## One day at work...
 
-    Boss: Our build is broken but we want to promote it to staging.
-    Me:   Well, we should probably fix the build.
-    Boss: Yeah, but it would be nice if we could promote the build but tell people
-          it's broken and not to use it.
-    Me:   What.
+    Boss:  Our build is broken but we want to promote it to staging.
+    Me:    Well, we should probably fix the build.
+    Boss:  Yeah, but it would be nice if we could promote the build but tell people
+           it's broken and not to use it.
+    Me:    What.
 
 
 ## Getting Started
-This plugin requires Grunt `~0.4.5`
-
-If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
 npm install i-am-disappoint --save-dev
@@ -25,6 +22,12 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 ```js
 grunt.loadNpmTasks('i-am-disappoint');
 ```
+
+For each public facing web page that needs to be shamed, add the following HTML comment somewhere
+on the page.
+
+    <!-- i-am-disappoint -->
+
 
 ## The "i_am_disappoint" task
 
@@ -46,56 +49,54 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+
+#### options.message
 Type: `String`
-Default value: `',  '`
+Default value: `'Failure'`
 
-A string value that is used to do something with whatever.
+The message to display on the ribbon.
 
-#### options.punctuation
+
+#### options.testResults
 Type: `String`
-Default value: `'.'`
 
-A string value that is used to do something else with whatever else.
+Filename of the XML test results to inspect for failure. Curently this only
+supports the JUnit XML output format.
 
-### Usage Examples
+#### options.color
+Type: `String`
+Default value: `'red'`
 
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+The color of the ribbon.
+
+#### options.position
+Type: `String`
+Default value: `'top-right'`
+
+The position to place the ribbon.
+
+### Usage Example
 
 ```js
 grunt.initConfig({
   i_am_disappoint: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
+      example: {
+        options: {
+            testResults: 'test/fixtures/test_results.xml',
+            message: 'so fail.'
+        },
+        files: { 'tmp/index.html': ['test/fixtures/index.html'] }
+      }
+    }
 });
 ```
 
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
-
-```js
-grunt.initConfig({
-  i_am_disappoint: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
-```
 ## Credits
 The ribbon style comes from  [Miro Karilahti](http://codepen.io/miroot)'s Pen [Corner Ribbons](http://codepen.io/miroot/pen/wiKAp/).
 
 
 ## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
+Want to contribute? Submit a pull request.
 
 ## Release History
 _(Nothing yet)_

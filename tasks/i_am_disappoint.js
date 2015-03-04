@@ -17,10 +17,12 @@ module.exports = function(grunt) {
   // creation: http://gruntjs.com/creating-tasks
 
   grunt.registerMultiTask('i_am_disappoint', 'Shames your terrible builds.', function() {
+    
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
-      punctuation: '.',
-      separator: ', '
+      message: this.data.options['message'] || 'Faiure',
+      color: this.data.options['color'] || 'red',
+      position: this.data.options['position'] || 'top-right'
     });
     
     var shame = fs.readFileSync('static/you-disappoint-me.html', 'utf-8');
@@ -34,7 +36,6 @@ module.exports = function(grunt) {
             everythingOkay = false;
           }
         });
-        console.log('Done');
     });
     
     this.files.forEach(function(file) {
@@ -53,6 +54,10 @@ module.exports = function(grunt) {
       
       if (!everythingOkay) {
         var regex = /<!-- i-am-disappoint -->/;
+        shame = grunt.template.process(shame, {data: { message: options.message,
+                                                       color: options.color,
+                                                       position: options.position }});
+        
         contents = contents.replace(regex, shame);
       }
     
@@ -61,17 +66,6 @@ module.exports = function(grunt) {
       // Print a success message.
       grunt.log.writeln('File "' + file.dest + '" created.');
     });
-    
-    
-
-    // Iterate over all specified file groups.
-/*    this.files.forEach(function(f) {
-      var html = fs.readFileSync(f, 'utf-8');
-      var regex = /<!-- i-am-disappoint -->/;
-      html = html.replace(regex, shame);
-      console.log(html);
-    });
-  */  
     
   });
 

@@ -33,6 +33,7 @@ module.exports = function(grunt) {
       example: {
         options: {
             testResults: 'test/fixtures/test_results.xml',
+            message: 'so fail.'
         },
         files: { 'tmp/index.html': ['test/fixtures/index.html'] }
       }
