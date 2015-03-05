@@ -1,14 +1,17 @@
 # i-am-disappoint
 
-> Shames your terrible builds.
+Shames your terrible builds by placing a failure ribbon on ones
+that don't pass.
 
 ## One day at work...
 
-    Boss:  Our build is broken but we want to promote it to staging.
-    Me:    Well, we should probably fix the build.
-    Boss:  Yeah, but it would be nice if we could promote the build but tell people
-           it's broken and not to use it.
-    Me:    What.
+> Boss: Our build is broken but we want to promote it to staging.
+
+> Me: Well, we should probably fix the build.
+
+> Boss: Yeah, but it would be nice if we could promote the build but tell people it's broken and not to use it.
+
+> Me: What.
 
 
 ## Getting Started
@@ -29,14 +32,14 @@ on the page.
     <!-- i-am-disappoint -->
 
 
-## The "i_am_disappoint" task
+## The "i-am-disappoint" task
 
 ### Overview
-In your project's Gruntfile, add a section named `i_am_disappoint` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `i-am-disappoint` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
-  i_am_disappoint: {
+  'i-am-disappoint': {
     options: {
       // Task-specific options go here.
     },
@@ -60,32 +63,45 @@ The message to display on the ribbon.
 #### options.testResults
 Type: `String`
 
-Filename of the XML test results to inspect for failure. Curently this only
-supports the JUnit XML output format.
+Filename of the XML test results to inspect for failure. Currently this only supports the JUnit XML output format.
 
 #### options.color
 Type: `String`
 Default value: `'red'`
 
-The color of the ribbon.
+The color of the ribbon. Possible values include
+* `red`
+* `orange`
+* `yellow`
+* `purple`
+* `blue`
+* `green`
+* `turquoise`
+* `grey`
+* `white`
+* `black`
 
 #### options.position
 Type: `String`
 Default value: `'top-right'`
 
-The position to place the ribbon.
+The position to place the ribbon. Possible values include
+* `top-left`
+* `top-right`
+* `bottom-left`
+* `bottom-right`.
 
 ### Usage Example
 
 ```js
 grunt.initConfig({
-  i_am_disappoint: {
+  'i-am-disappoint': {
       example: {
         options: {
-            testResults: 'test/fixtures/test_results.xml',
-            message: 'so fail.'
+            testResults: 'test/results/test_results.xml',
+            message: 'So fail.'
         },
-        files: { 'tmp/index.html': ['test/fixtures/index.html'] }
+        files: { 'build/index.html': ['app/index.html'] }
       }
     }
 });
