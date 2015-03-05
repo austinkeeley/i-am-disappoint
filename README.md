@@ -1,7 +1,7 @@
 # i-am-disappoint
 
 Shames your terrible builds by placing a failure ribbon on ones
-that don't pass.
+that don't pass the unit test suite.
 
 ## One day at work...
 
@@ -12,6 +12,12 @@ that don't pass.
 > Boss: Yeah, but it would be nice if we could promote the build but tell people it's broken and not to use it.
 
 > Me: What.
+
+## Screenshot
+Note the red "Failure" ribbon warning would-be investors to stay away until we get a passing unit test suite.
+
+<img src="http://i.imgur.com/9MGDR2U.png" alt="screenshot" style="border: 1px solid #eee;" />
+
 
 
 ## Getting Started
@@ -115,4 +121,4 @@ The ribbon style comes from  [Miro Karilahti](http://codepen.io/miroot)'s Pen [C
 Want to contribute? Submit a pull request.
 
 ## Release History
-_(Nothing yet)_
+**0.1.1** Pushed to NPM

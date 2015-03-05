@@ -33,7 +33,7 @@ module.exports = function(grunt) {
       example: {
         options: {
             testResults: 'test/fixtures/test_results.xml',
-            message: 'so fail.'
+            message: 'Failure'
         },
         files: { 'tmp/index.html': ['test/fixtures/index.html'] }
       }
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
 
 
   // By default, lint and run all tests.
-  grunt.registerTask('example', ['i-am-disappoint:example']);
+  grunt.registerTask('default', ['i-am-disappoint:example']);
 
 
 
