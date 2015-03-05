@@ -26,7 +26,7 @@ module.exports = function(grunt) {
       position: this.data.options['position'] || 'top-right'
     });
 
-    var shame = fs.readFileSync('static/you-disappoint-me.html', 'utf-8');
+    var shame = fs.readFileSync(__dirname + '/../static/you-disappoint-me.html', 'utf-8');
 
     var data = fs.readFileSync(options.testResults, 'utf-8');
     var parser = new xml2js.Parser();

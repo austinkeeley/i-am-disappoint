@@ -39,5 +39,8 @@
   },
   "keywords": [
     "gruntplugin"
-  ]
+  ],
+  "dependencies": {
+    "xml2js": "^0.4.5"
+  }
 }
