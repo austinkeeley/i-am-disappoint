@@ -121,4 +121,4 @@ The ribbon style comes from  [Miro Karilahti](http://codepen.io/miroot)'s Pen [C
 Want to contribute? Submit a pull request.
 
 ## Release History
-**0.1.1** Pushed to NPM
+**0.1.2** Pushed to NPM
